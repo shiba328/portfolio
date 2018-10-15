@@ -1,65 +1,73 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center>
-    <v-flex
-      xs12
-      sm8
-      md6>
-      <div class="text-xs-center">
-        <logo/>
-        <vuetify-logo/>
-      </div>
-      <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a
-            href="https://vuetifyjs.com"
-            target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a
-            href="https://chat.vuetifyjs.com/"
-            target="_blank"
-            title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a
-            href="https://github.com/vuetifyjs/vuetify/issues"
-            target="_blank"
-            title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank">Nuxt Documentation</a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer/>
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <v-container grid-list-lg>
+    <v-layout row wrap>
+      <v-flex xs12 md4 v-for="p,i in postData">
+        <Post
+          :key="p.id"
+          :pid="p.id"
+          :pdata="p"
+        />
+      </v-flex>
+
+    </v-layout>
+
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Post from '~/components/Post.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo
+    Post
+  },
+  data(){
+    return{
+      postData:[
+        {
+          id:1,
+          link:'https://gs-shiba.sakura.ne.jp/lab02/',
+          title: 'Flying Pizaa!',
+          img: 'flyingPizaa.png',
+          discript: 'HTML+JS+localstorageで簡易ゲーム。結果をlocalstorageに保存します',
+          tag:['HTML/CSS','jQuery','LocalStorage'],
+          period: '16h'
+        },
+        {
+          id:2,
+          link:'https://gs-shiba.sakura.ne.jp/lab03/',
+          title: 'Janken Wars',
+          img: 'JankenWars.png',
+          discript: 'HTML+JS+ウェブカメラでじゃんけん。ウェブカメラで出し手の上に手をかざすとじゃんけんします',
+          tag:['HTML/CSS','jQuery','canvas','webカメラ'],
+          period: '24h'
+        },{
+          id:3,
+          link:'https://gs-shiba.sakura.ne.jp/lab04/',
+          title: 'iOSメモ帳クローン(マークダウン表示)',
+          img: 'memo1.png',
+          discript: 'iOSのメモをそのままJSで表現。マークダウン表示に変更できます',
+          tag:['HTML/CSS','jQuery','LocalStorage','json'],
+          period: '12h'
+        },{
+          id:4,
+          link:'https://gs-shiba.sakura.ne.jp/lab05/',
+          title: '四文字熟語を答えよう！',
+          img: 'yonmoji.png',
+          discript: '４文字熟語ドリル。空白に文字を入れて４文字熟語を答えよう',
+          tag:['HTML/CSS','jQuery','json'],
+          period: '8h'
+        },{
+          id:4,
+          link:'https://gs-shiba.sakura.ne.jp/lab06/',
+          title: 'OldMaid',
+          img: 'oldmaid.png',
+          discript: 'Firebaseを利用して、リアルタイムババ抜き対戦ができます。',
+          tag:['HTML/CSS','jQuery','firebase','LocalStorage'],
+          period: '38h'
+        }
+      ]
+    }
   }
 }
 </script>
