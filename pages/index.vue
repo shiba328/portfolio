@@ -1,73 +1,50 @@
-<template>
-  <v-container grid-list-lg>
-    <v-layout row wrap>
-      <v-flex xs12 md4 v-for="p,i in postData">
-        <Post
-          :key="p.id"
-          :pid="p.id"
-          :pdata="p"
-        />
-      </v-flex>
-
-    </v-layout>
-
-  </v-container>
+<template lang="pug">
+  v-container(grid-list-lg fluid)
+    hero
+    skill
+    program
+    plan
+    merit
+    div(style="text-align: center;" )
+      h1 Contact ME
+      p(style="font-size: 120%;width:70%;")
+      v-btn(href="https://m.me/mitue.okamoto" target="_blank" ) Messageを送信
 </template>
 
 <script>
-import Post from '~/components/Post.vue'
+import skill from '~/components/index/skill.vue'
+import hero from '~/components/index/hero.vue'
+import program from '~/components/index/program.vue'
+import plan from '~/components/index/plan.vue'
+import merit from '~/components/index/merit.vue'
 
 export default {
   components: {
-    Post
+    skill,
+    hero,
+    program,
+    plan,
+    merit
   },
   data(){
     return{
-      postData:[
-        {
-          id:1,
-          link:'https://gs-shiba.sakura.ne.jp/lab02/',
-          title: 'Flying Pizaa!',
-          img: 'flyingPizaa.png',
-          discript: 'HTML+JS+localstorageで簡易ゲーム。結果をlocalstorageに保存します',
-          tag:['HTML/CSS','jQuery','LocalStorage'],
-          period: '16h'
-        },
-        {
-          id:2,
-          link:'https://gs-shiba.sakura.ne.jp/lab03/',
-          title: 'Janken Wars',
-          img: 'JankenWars.png',
-          discript: 'HTML+JS+ウェブカメラでじゃんけん。ウェブカメラで出し手の上に手をかざすとじゃんけんします',
-          tag:['HTML/CSS','jQuery','canvas','webカメラ'],
-          period: '24h'
-        },{
-          id:3,
-          link:'https://gs-shiba.sakura.ne.jp/lab04/',
-          title: 'iOSメモ帳クローン(マークダウン表示)',
-          img: 'memo1.png',
-          discript: 'iOSのメモをそのままJSで表現。マークダウン表示に変更できます',
-          tag:['HTML/CSS','jQuery','LocalStorage','json'],
-          period: '12h'
-        },{
-          id:4,
-          link:'https://gs-shiba.sakura.ne.jp/lab05/',
-          title: '四文字熟語を答えよう！',
-          img: 'yonmoji.png',
-          discript: '４文字熟語ドリル。空白に文字を入れて４文字熟語を答えよう',
-          tag:['HTML/CSS','jQuery','json'],
-          period: '8h'
-        },{
-          id:4,
-          link:'https://gs-shiba.sakura.ne.jp/lab06/',
-          title: 'OldMaid',
-          img: 'oldmaid.png',
-          discript: 'Firebaseを利用して、リアルタイムババ抜き対戦ができます。',
-          tag:['HTML/CSS','jQuery','firebase','LocalStorage'],
-          period: '38h'
-        }
-      ]
     }
-  }
+  },
+
 }
 </script>
+<style>
+h1{
+  font-size: 280%;
+  font-weight: normal;
+  text-align: center
+}
+h2{
+  font-size: 200%;
+  font-weight: normal;
+}
+body{
+      font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+</style>
+
