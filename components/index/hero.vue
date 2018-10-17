@@ -17,6 +17,7 @@
                 v-btn(href="https://twitter.com/shiba_328" color="#1da1f2" dark) twitter
                 div(class="mt-5")
         v-btn(href="https://m.me/mitue.okamoto" target="_blank" dark outline) \ 1ヶ月週3〜!社会人インターン先募集中！無償・有償 応相談 /
+        div(mt-3) このポートフォリオはVue(Next.js)+TravisCI+GitHubPageで作成しています。
 </template>
 
 <script>
