@@ -16,7 +16,9 @@
                 v-card-text
                     h2 {{p.title}}
                     div {{p.discript}}
-                    v-chip( v-for="s in p.skills" :key="s" small label outline) {{s}} 
+                    small 制作時間：{{p.period}}
+                    div
+                      v-chip( v-for="s in p.skills" :key="s" small label outline) {{s}} 
 </template>
 
 <script>
@@ -29,7 +31,7 @@ export default {
           title: 'Flying Pizaa!',
           img: 'flyingPizaa.png',
           discript: 'HTML+JS+localstorageで簡易ゲーム。結果をlocalstorageに保存します',
-          tag:['HTML/CSS','jQuery','LocalStorage'],
+          skills:['HTML/CSS','jQuery','LocalStorage'],
           period: '16h'
         },
         {
@@ -38,7 +40,7 @@ export default {
           title: 'Janken Wars',
           img: 'JankenWars.png',
           discript: 'HTML+JS+ウェブカメラでじゃんけん。ウェブカメラで出し手の上に手をかざすとじゃんけんします',
-          tag:['HTML/CSS','jQuery','canvas','webカメラ'],
+          skills:['HTML/CSS','jQuery','canvas','webカメラ'],
           period: '24h'
         },{
           id:3,
