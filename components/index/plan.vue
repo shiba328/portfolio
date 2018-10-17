@@ -18,9 +18,9 @@
                     h3(class="mb-0") {{p.title}}
                     div 
                     div
-                    v-chip( v-for="c in p.genre" small) {{c}}
+                    v-chip( v-for="c in p.genre" :key="c" small) {{c}}
                     div
-                    v-chip( v-for="s in p.skills" small label outline) {{s}} 
+                    v-chip( v-for="s in p.skills" :key="s" small label outline) {{s}} 
     
 </template>
 

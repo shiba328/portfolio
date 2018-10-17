@@ -16,7 +16,7 @@
                 v-card-text
                     h2 {{p.title}}
                     div {{p.discript}}
-                    v-chip( v-for="s in p.skills" small label outline) {{s}} 
+                    v-chip( v-for="s in p.skills" :key="s" small label outline) {{s}} 
 </template>
 
 <script>
