@@ -1,5 +1,5 @@
 <template>
-    <canvas></canvas>
+    <canvas>あああ</canvas>
 </template>
 
 <script>
