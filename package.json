@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
+    "marked": "^0.5.2",
     "nuxt": "^2.0.0",
     "pug-plain-loader": "^1.0.0",
     "vuetify": "^1.2.4"

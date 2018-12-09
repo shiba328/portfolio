@@ -3,7 +3,6 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
   router: {
-    base: '/portfolio/'
   },
   /*
   ** Headers of the page
@@ -55,7 +54,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
