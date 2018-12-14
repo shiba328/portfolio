@@ -11,7 +11,7 @@
             v-flex(xs6)
               v-icon(color="red lighten-1") favorite
               div Like
-            v-flex(xs6) 
+            v-flex(xs6)
               v-icon(color="amber lighten-1")  battery_charging_full
               div Power
         v-flex(xs2)
@@ -45,7 +45,7 @@
                   )
               v-flex(xs12 text-xs-right style="padding-top:0;color:#ce792b"): small {{ Bskills[i][0] }}
           v-flex(xs2)
-            div {{ Nskills[i][0] }}  
+            div {{ Nskills[i][0] }}
           v-flex(xs5)
             v-layout(row wrap justify-center align-center text-xs-center)
               v-flex(xs6)
@@ -64,8 +64,8 @@
                     :value="skill[2]"
                     style="margin:0"
                   )
-              v-flex(xs12　text-xs-left style="padding-top:0;color:#ce792b"): small {{ Fskills[i][0] }}    
-    
+              v-flex(xs12　text-xs-left style="padding-top:0;color:#ce792b"): small {{ Fskills[i][0] }}
+
 </template>
 
 <script>
@@ -78,8 +78,8 @@ export default {
         ["Swift","fa-check-circle"],
       ],
       Fskills: () => [
-        ["NoThema Full Customize",90,99],
-        ["Vutyfiy/axsios/store/middleware",50,99],
+        ["NoThema Full Customize",80,99],
+        ["Vutyfiy/axsios/store/middleware",80,99],
         ["make website",40,50],
         ["Todo録音アプリ(※開発のみ)",30,10],
       ],
