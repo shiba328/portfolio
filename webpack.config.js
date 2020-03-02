@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const workboxPlugin = require('workbox-webpack-plugin');
+// const workboxPlugin = require('workbox-webpack-plugin');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -28,11 +28,11 @@ module.exports = {
     ]),
 		new webpack.ProgressPlugin(),
 		new MiniCssExtractPlugin(),
-		new workboxPlugin.GenerateSW({
-			swDest: 'sw.js',
-			clientsClaim: true,
-			skipWaiting: false
-		})
+		// new workboxPlugin.GenerateSW({
+		// 	swDest: 'sw.js',
+		// 	clientsClaim: true,
+		// 	skipWaiting: false
+		// })
 	],
 	module: {
 		rules: [
