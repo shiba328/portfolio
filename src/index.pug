@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(content="website", property="og:type")
+    meta(content="ja_JP", property="og:locale")
+    link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons&text=favoritebattery_charging_full" rel="stylesheet")
+    script(defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.js")
+    title Portfolio | shiba328
+  body
+    .hero
+      h1 About Me
+      h2 しば みつえ
+      h3 Frontend Engineer
+      aside 4歳の子供がいるママエンジニアです。近年は受託会社を起業し社長兼フリーランスとして、アプリ開発会社でWEB事業を新規事業を創出したり、大手クラウドソーシング会社のコーポレートフレームワークチーム(6名)内でFE(主にTS/CSS-FW実装)を担当したり、大手企業の0→1(ゼロイチ)イントプレナー育成に参画し、実証実験用システムを提供したり、大手飲食チェーンのネット注文改修のFE担当したりしています。一人で動いてるので、一緒にレベル上げしてくれる仲間と師匠が欲しいです。
+
+      .account
+        .col.qiita: a(href="https://qiita.com/shiba_mitue") Qiita
+        .col.twitter: a(href="https://twitter.com/shiba_328") Twitter
+        .col.wp: a(href="http://wp.akirumade.com") WP
+      .info 育児・複数案件掛け持ちのため基本的にフルリモートで受託しています。
+      .attention このポートフォリオはWebpack(Pug+PostCss)+GitHub Actions+Github Pageでできています。
+    .skills
+      h2 Skill
+      .skills-items
+        .flex-box.title
+          .xs5 BackEnd
+          .xs2.divider
+          .xs5 FrontEnd
+        .flex-box.icons
+          .xs5.flex-box
+            .xs6.label.like
+              i.icon favorite
+              span Like
+            .xs6.label.power
+              i.icon battery_charging_full
+              span Power
+          .xs2.spacer
+          .xs5.flex-box
+            .xs6.label.power
+              i.icon battery_charging_full
+              span Power
+            .xs6.label.like
+              i.icon favorite
+              span Like
+        -
+          var skills = [
+            {
+              key: 'vuejs',
+              icon: 'f41f',
+              be: {
+                like: 99,
+                power: 70,
+                description: 'Nuxt/GoogleCloudRun/Firebase/CI'
+              },
+              fe: {
+                like: 99,
+                power: 80,
+                description: 'serverlass/plugin/Vutyfiy/vuex/middleware/lint'
+              },
+              label: 'Vuejs(Nuxt)'
+            },
+            {
+              key: 'webpack',
+              be: {
+                like: 0,
+                power: 0,
+                description: ''
+              },
+              fe: {
+                like: 80,
+                power: 70,
+                description: 'pug/postCss/loader/lint'
+              },
+              label: 'webpack'
+            },
+            {
+              key: 'wordpress',
+              be: {
+                like: 50,
+                power: 80,
+                description: 'MySQL/API/ACF/KUSANAGI/plugin'
+              },
+              fe: {
+                like: 50,
+                power: 90,
+                description: 'NoThema Full Customize'
+              },
+              label: 'WordPress'
+            },
+            {
+              key: 'laravel',
+              be: {
+                like: 20,
+                power: 40,
+                description: 'MySQL/API'
+              },
+              fe: {
+                like: 20,
+                power: 60,
+                description: 'make auth website'
+              },
+              label: 'Laravel'
+            },
+            {
+              key: 'app',
+              be: {
+                like: 10,
+                power: 10,
+                description: 'UserDefault(*Realmは未経験)'
+              },
+              fe: {
+                like: 10,
+                power: 30,
+                description: 'Todo録音アプリ/beacon(※Practiceのみ)'
+              },
+              label: 'App(Flutter)'
+            }
+          ]
+        each skill in skills
+          .flex-box.skill(class=skill.key)
+            .xs5.flex-box.be
+              .xs6
+                .like.progress
+                  .progress-text #{skill.be.like}%
+                  .progress-liner(style=`width:${skill.be.like}%`)
+              .xs6
+                .power.progress
+                  .progress-text #{skill.be.power}%
+                  .progress-liner(style=`width:${skill.be.power}%`)
+              .col.description #{skill.be.description}
+            .xs2.label
+              i.fab.fa-lg(class=`fa-${skill.key}`)
+              .text #{skill.label}
+              if skill.sample
+                a(href=skill.sample) Sample
+            .xs5.flex-box.fe
+              .xs6
+                .power.progress
+                  .progress-text #{skill.fe.power}%
+                  .progress-liner(style=`width:${skill.fe.power}%`)
+              .xs6
+                .like.progress
+                  .progress-text #{skill.fe.like}%
+                  .progress-liner(style=`width:${skill.fe.like}%`)
+              .col.description
+                p #{skill.fe.description}
+      .skills-range
+        .flex-box
+          -
+            var ranges = [
+              'インフラ',
+              'サーバー',
+              'フロント',
+              'スタイル'
+            ]
+          each range in ranges
+            span #{range}
+        .bar
+          .inner 対応範囲
+      aside 0→1が好きなので、事業主からのふわっとした要望から要件定義やプロトタイプ作成を請け負ったりモックから初期リリースの作業が多い。そのためそのため適当な要望でも先行して対応が可能で、担当者は素早い意思決定が可能になります。またサーバーレスを推奨し、BEの初期コストを下げます。オペレーションに拒否感がないので、数多くのアプリを利用しサービスを作りあげています。
+      .another
+        h3 経験のあるアプリ等(抜粋)
+        .icons
+          -
+            var icons = [
+              'adobe',
+              'amazon-pay',
+              'buffer',
+              'docker',
+              'drupal',
+              'figma',
+              'github',
+              'gitlab',
+              'js-square',
+              'laravel',
+              'mailchimp',
+              'node-js',
+              'npm',
+              'php',
+              'raspberry-pi',
+              'sass',
+              'sketch',
+              'slack',
+              'steam',
+              'swift',
+              'trello',
+              'vuejs',
+              'wordpress-simple',
+              'yarn'
+            ]
+          each icon in icons
+            i.fab.fa-2x(class=`fa-${icon}`)
+    .programs
+      -
+        var titles = ['Program', 'Product', 'Plan']
+      -
+        var items = {
+          'Program': [
+            {
+              title: 'Flying Pizza',
+              body: 'HTML+jQuery+LocalStorageで作成。簡易なWebを作る研修の時間でゲームを作りました。',
+              tag: ['HTML/CSS', 'jQuery', 'LocalStorage'],
+              time: '16h',
+              date: '2018/04',
+              src: '/images/flyingPizaa.png',
+              link: 'https://example.com'
+            },
+            {
+              title: 'Janken Wars',
+              body: 'HTML+JS+ウェブカメラでじゃんけん。ウェブカメラで出し手の上に手をかざすとじゃんけんします',
+              tag: ['HTML/CSS', 'jQuery', 'canvas', 'webカメラ'],
+              time: '24h',
+              date: '2018/04',
+              src: '/images/JankenWars.png',
+              link: 'https://example.com'
+            },
+            {
+              title: 'iOSメモ帳クローン(マークダウン表示)',
+              body: 'iOSのメモをそのままJSで表現。マークダウン表示に変更できます',
+              tag: ['HTML/CSS', 'jQuery', 'LocalStorage', 'json'],
+              time: '6h',
+              date: '2018/05',
+              src: '/images/memo1.png',
+              link: 'https://example.com'
+            },
+            {
+              title: '一言付箋ボード',
+              body: 'Enterでどんどん新しい付箋が作られるWEBボード',
+              tag: ['HTML/CSS', 'jQuery', 'LocalStorage', 'json'],
+              time: '6h',
+              date: '2018/05',
+              src: '/images/memo2.png',
+              link: 'https://example.com'
+            },
+            {
+              title: '四文字熟語を覚えよう!',
+              body: '四文字熟語ドリルクイズ。空白に文字をいれて４文字熟語を答えるゲーム',
+              tag: ['HTML/CSS', 'jQuery', 'LocalStorage', 'json'],
+              time: '8h',
+              date: '2018/05',
+              src: '/images/yonmoji.png',
+              link: 'https://example.com'
+            },
+            {
+              title: 'OldMaid',
+              body: 'Firebaseを利用して、リアルタイムババ抜き対戦',
+              tag: ['HTML/CSS', 'jQuery', 'firebase', 'LocalStorage'],
+              time: '38h',
+              date: '2018/06',
+              src: '/images/oldmaid.png',
+              link: 'https://example.com'
+            }
+          ],
+          'Product': [
+            {
+              title: 'Join+Image',
+              body: 'Canvasを利用して,ブラウザでアップした画像をつなげて一枚画像として出力する',
+              tag: ['HTML/CSS', 'JS'],
+              time: '10h',
+              date: '2017/06',
+              to: ['toC'],
+              link: 'https://example.com'
+            },
+            {
+              title: 'チケットメーカー',
+              body: '自宅やネットプリント・オフィスプリントで手軽にシリアルナンバーのついたチケットをA4サイズに好きな綴で出力できるサービス',
+              tag: ['NuxtJS', 'LocalStorage'],
+              time: '2w',
+              date: '2019/4',
+              to: ['toC','toB'],
+              link: 'https://example.com'
+            },
+            {
+              title: 'BANGOTECH',
+              body: '発番管理システム',
+              tag: ['NuxtJS', 'firebase'],
+              time: '8w',
+              date: '2019/4',
+              to: ['toB'],
+              link: 'https://example.com'
+            },
+            {
+              title: 'QUSY',
+              body: 'クイズ統括管理システム',
+              tag: ['NuxtJS', 'firebase', 'GCR', 'CI'],
+              time: '8w',
+              date: '2019/6',
+              to: ['toBtoC'],
+              link: 'https://example.com'
+            }
+          ],
+          'Plan': [
+            {
+              body: 'アニメーション展開図ジェネレーター',
+              to: ['toC'],
+              tag: ['canvas', 'LocalStorage']
+            },
+            {
+              body: 'ARマーカー小規模Mapシステム',
+              to: ['toBtoC'],
+              src: '/images/armap.png',
+              tag: ['位置情報', 'AR', 'beacon']
+            },
+            {
+              body: 'スマートミラー用WEBサービス',
+              to: ['toC'],
+              src: '/images/cagamii.png',
+              tag: ['ヘルスケア', '美容']
+            },
+            {
+              body: '街角等身大キャンペーン用サイネージシステム',
+              to: ['toBtoC'],
+              tag: ['マーケティング', 'バラエティ']
+            },
+            {
+              body: 'スーパーマーケット向けサイネージシステム',
+              to: ['toC', 'toB'],
+              tag: ['デジタルサイネージ', 'レシピ']
+            },
+            {
+              body: 'イベント会場向け認証システム',
+              to: ['toBtoC'],
+              tag: ['デジタルサイネージ', 'QR']
+            },
+            {
+              body: 'わからないボタン',
+              to: ['toC'],
+              tag: ['教育']
+            },
+            {
+              body: '物流倉庫連動型仮想頒布会',
+              to: ['toB', 'toC'],
+              tag: ['イベント', '物流']
+            },
+            {
+              body: 'スタイリストの窓口',
+              to: ['toB', 'toC'],
+              tag: ['人材', '物流', '子育て']
+            },
+            {
+              body: 'VRマインドマップ',
+              to: ['toC'],
+              tag: ['VR']
+            }
+          ]
+        }
+      each title in titles
+        h2.programs-title #{title}
+        .flex-box.programs-items
+          each item in items[title]
+            .card
+              .card-image
+                if item.src
+                  .img(style=`background-image: url(${item.src})`)
+                else
+                  .img(style='background-image: url(/images/noimage.png)')
+              .card-body
+                .card-text
+                  if item.to
+                    .to
+                      each i in item.to
+                        span.chip #{i}
+                  if item.title
+                    .title #{item.title}
+                  if item.body
+                    .description #{item.body}
+                  if item.date
+                    .date
+                      span.label 制作日時
+                      span.num #{item.date}
+                  if item.time
+                    .time
+                      span.label 制作時間
+                      span.num #{item.time}
+                if item.tag
+                  .tag
+                    each tag in item.tag
+                      span.chip #{tag}
+    .merideme
+      h2 Merit/Demerit
+      .flex-box
+        .flex
+          h3 メリット
+          ul
+            li 積極的に情報発信を推奨
+            li 作業スピード(1サイト/2day〜2week)
+            li WEBデザイン知識(UI/UXを極めたい)
+            li マーケティング基礎知識(導入支援)
+            li BtoBが好き。プロジェクトへの熱量
+            li 一人である程度動ける知識
+        .flex
+          h3 デメリット
+          ul
+            li ネタに困ると更新が止まる
+            li 育児中のため帰宅早め(リモート希望)
+            li ビジュアルデザインは諦めてます
+            li データサイエンスは別物
+            li 技術力の上げ方に悩み中
+            li 調子に乗りやすい
+    .price
+      h2 Price
+      div 受託： 初回/30万円から(継続契約で5万円から)
+      div 準委任：平均80万(140h)
+      div 就職： 月/40万以上〜(応相談)
+    .contact
+      h1 Contact ME
+      p 職務履歴・履歴書が必要な場合は以下からお気軽にご連絡ください。
+      a.btn(href="https://m.me/mitue.okamoto") Messageを送信
