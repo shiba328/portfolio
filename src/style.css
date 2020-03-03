@@ -8,6 +8,7 @@ html {
   font-size: 62.5%;
   letter-spacing: 0.5px;
   line-height: 1.6;
+  word-break: break-word;
 }
 
 body {
@@ -178,9 +179,16 @@ img {
 
 .hero {
   text-align: center;
+  padding: 0 4%;
   
   aside {
-    padding: 0 20%;
+    @media (--md) {
+      padding: 0 20%;
+    }
+
+    @media (--lg) {
+      padding: 0 20%;
+    }
   }
   
   .account {
@@ -216,7 +224,8 @@ img {
 }
 
 .skills {
-  padding: 0.5%;
+  padding: 4%;
+
   &-items {
     .title {
       text-align: center;
@@ -249,10 +258,16 @@ img {
         align-self: center;
       }
 
-      .description {
-        flex-basis: 100%;
-        flex-grow: 0;
+      .col {
         max-width: 100%;
+        flex-basis: 100%;
+      }
+
+      .description {
+        margin: 4px;
+        margin-bottom: 16px;
+        flex-grow: 0;
+        line-height: 1.2;
         font-size: 60%;
         color: #ce792b;
       }
@@ -298,8 +313,9 @@ img {
     }
   }
 
-  .skills-range {
+  &-range {
     margin: 0.5%;
+    margin-bottom: 16px;
 
     .flex-box {
       display: flex;
@@ -367,5 +383,15 @@ img {
 .contact,
 .price {
   text-align: center;
+}
+
+.container{
+  &.main {
+    display: block !important;
+  }
+
+  &.loading {
+    display: none !important;
+  }
 }
 
