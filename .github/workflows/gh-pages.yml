@@ -6,5 +6,4 @@ jobs:
     steps:
       - name: setup Node
         uses: actions/setup-node@v1
-        run: |
-          echo 'test'
+        run: echo 'test'
