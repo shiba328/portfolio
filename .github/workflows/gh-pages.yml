@@ -5,3 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: setup Node
+        run: echo 'test'
