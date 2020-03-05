@@ -41,10 +41,53 @@ img {
   height: auto;
 }
 
+.icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 .flex-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.xs2 {
+  flex-basis: 16.666666666666664%;
+  flex-grow: 0;
+  max-width: 16.666666666666664%;
+}
+
+.xs5 {
+  flex-basis: 41.66666666666667%;
+  flex-grow: 0;
+  max-width: 41.66666666666667%;
+}
+
+.xs6 {
+  flex-basis: 50%;
+  flex-grow: 0;
+  max-width: 50%;
 }
 
 .card {
@@ -83,26 +126,13 @@ img {
     padding: 1em;
   }
 
-  .to {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    line-height: 1;
-
-    .chip {
-      padding: 0.2em 1em;
-      margin-right: 5px;
-      font-size: 70%;
-      font-weight: 400;
-      color: #b30000;
-      border: 1px solid;
-      border-radius: 1em;
-    }
-  }
-
   .title {
     font-size: 130%;
     line-height: 1.2;
+    margin-bottom: 1em;
+  }
+
+  .link {
     margin-bottom: 1em;
   }
 
@@ -110,71 +140,6 @@ img {
     font-size: 85%;
     margin-bottom: 1em;
   }
-
-  .date,
-  .time {
-    font-size: 78%;
-
-    .label::after {
-      margin-left: 2px;
-      margin-right: 2px;
-      content: ':';
-    }
-  }
-
-  .tag {
-    .chip {
-      display: inline-block;
-      padding: 0.2em 0.5em;
-      margin-right: 3px;
-      font-size: 60%;
-      border: 1px solid #bfbfbf;
-      border-radius: 2px;
-    }
-  }
-}
-
-.icon {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-.xs2 {
-  flex-basis: 16.666666666666664%;
-  flex-grow: 0;
-  max-width: 16.666666666666664%;
-}
-
-.xs5 {
-  flex-basis: 41.66666666666667%;
-  flex-grow: 0;
-  max-width: 41.66666666666667%;
-}
-
-.xs6 {
-  flex-basis: 50%;
-  flex-grow: 0;
-  max-width: 50%;
 }
 
 .hero {
@@ -370,9 +335,47 @@ img {
   }
   &-items {
     padding: 0.5%;
+
+    .to {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      line-height: 1;
+
+      .chip {
+        padding: 0.2em 1em;
+        margin-right: 5px;
+        font-size: 70%;
+        font-weight: 400;
+        color: #b30000;
+        border: 1px solid;
+        border-radius: 1em;
+      }
+    }
+
+    .date,
+    .time {
+      font-size: 78%;
+
+      .label::after {
+        margin-left: 2px;
+        margin-right: 2px;
+        content: ':';
+      }
+    }
+
+    .tag {
+      .chip {
+        display: inline-block;
+        padding: 0.2em 0.5em;
+        margin-right: 3px;
+        font-size: 60%;
+        border: 1px solid #bfbfbf;
+        border-radius: 2px;
+      }
+    }
   }
 }
-
 
 .merideme {
   .flex-box {
@@ -394,4 +397,3 @@ img {
     display: none !important;
   }
 }
-

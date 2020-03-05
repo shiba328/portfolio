@@ -9,6 +9,9 @@ html(lang="ja")
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons&text=favoritebattery_charging_full" rel="stylesheet")
     script(defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.js")
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-159821262-1")
+    script.
+      window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-159821262-1');
     title Portfolio | shiba328
   body
     .container.main(style="display:none")
@@ -235,7 +238,7 @@ html(lang="ja")
                 time: '16h',
                 date: '2018/04',
                 src: './images/flyingPizaa.png',
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: 'Janken Wars',
@@ -244,7 +247,7 @@ html(lang="ja")
                 time: '24h',
                 date: '2018/04',
                 src: './images/JankenWars.png',
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: 'iOSメモ帳クローン(マークダウン表示)',
@@ -253,7 +256,7 @@ html(lang="ja")
                 time: '6h',
                 date: '2018/05',
                 src: './images/memo1.png',
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: '一言付箋ボード',
@@ -262,7 +265,7 @@ html(lang="ja")
                 time: '6h',
                 date: '2018/05',
                 src: './images/memo2.png',
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: '四文字熟語を覚えよう!',
@@ -271,7 +274,7 @@ html(lang="ja")
                 time: '8h',
                 date: '2018/05',
                 src: './images/yonmoji.png',
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: 'OldMaid',
@@ -280,18 +283,18 @@ html(lang="ja")
                 time: '38h',
                 date: '2018/06',
                 src: './images/oldmaid.png',
-                link: 'https://example.com'
+                link: ''
               }
             ],
             'Product': [
               {
-                title: 'Join+Image',
-                body: 'Canvasを利用して,ブラウザでアップした画像をつなげて一枚画像として出力する',
+                title: '画像くっつけったー',
+                body: '複数の写真画像を一枚に結合したい無料オンラインツール「くっつけたー」',
                 tag: ['HTML/CSS', 'JS'],
                 time: '10h',
                 date: '2017/06',
                 to: ['toC'],
-                link: 'https://example.com'
+                link: 'https://shiba328.github.io/join-images/'
               },
               {
                 title: 'チケットメーカー',
@@ -300,7 +303,7 @@ html(lang="ja")
                 time: '2w',
                 date: '2019/4',
                 to: ['toC','toB'],
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: 'BANGOTECH',
@@ -309,7 +312,7 @@ html(lang="ja")
                 time: '8w',
                 date: '2019/4',
                 to: ['toB'],
-                link: 'https://example.com'
+                link: ''
               },
               {
                 title: 'QUSY',
@@ -318,7 +321,7 @@ html(lang="ja")
                 time: '8w',
                 date: '2019/6',
                 to: ['toBtoC'],
-                link: 'https://example.com'
+                link: ''
               }
             ],
             'Plan': [
@@ -394,6 +397,9 @@ html(lang="ja")
                           span.chip #{i}
                     if item.title
                       .title #{item.title}
+                    if item.link
+                      .link
+                        a(href=item.link) プロダクトサイト →
                     if item.body
                       .description #{item.body}
                     if item.date
